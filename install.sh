@@ -12,18 +12,10 @@ display_welcome() {
   echo -e ""
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
-  echo -e "${BLUE}[+]                AUTO INSTALLER THEMA             [+]${NC}"
-  echo -e "${BLUE}[+]                  © FADHOST OFFC                [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
   echo -e "${RED}[+] =============================================== [+]${NC}"
   echo -e ""
   echo -e "script ini di buat untuk mempermudah penginstalasian thema pterodactyle,"
-  echo -e "dilarang keras untuk memperjual belikan."
-  echo -e ""
-  echo -e "𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 :"
-  echo -e "@fadhost"
-  echo -e "𝗖𝗥𝗘𝗗𝗜𝗧𝗦 :"
-  echo -e "@FadhostOffc"
   sleep 4
   clear
 }
@@ -52,24 +44,6 @@ install_jq() {
   sleep 1
   clear
 }
-#Check user token
-check_token() {
-  echo -e "                                                       "
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "${BLUE}[+]               LICENSY FADHOST OFFC             [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
-  echo -e "                                                       "
-  echo -e "${YELLOW}MASUKAN AKSES TOKEN :${NC}"
-  read -r USER_TOKEN
-
-  if [ "$USER_TOKEN" = "124850" ]; then
-    echo -e "${GREEN}AKSES BERHASIL${NC}}"
-  else
-    echo -e "${GREEN}Buy dulu Gih Ke Fadhost${NC}"
-    exit 1
-  fi
-  clear
-}
 
 # Install theme
 install_theme() {
@@ -88,7 +62,7 @@ install_theme() {
     read -r SELECT_THEME
     case "$SELECT_THEME" in
       1)
-        THEME_URL=$(echo -e "https://github.com/gitfdil1248/theme/raw/main/C2.zip")
+        THEME_URL=$(echo -e "https://github.com/X-Tio/theme/raw/main/setllar.zip")
         break
         ;;
       2)
@@ -96,7 +70,7 @@ install_theme() {
         break
         ;;
       3)
-        THEME_URL=$(echo -e "https://github.com/gitfdil1248/theme/raw/main/C3.zip")
+        THEME_URL=$(echo -e "https://github.com/X-Tio/theme/raw/main/billing.zip")
         break
         ;; 
       x)
@@ -121,7 +95,7 @@ if [ "$SELECT_THEME" -eq 1 ]; then
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                                   "
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
-  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
   sudo apt install -y nodejs
   sudo npm i -g yarn
   cd /var/www/pterodactyl
@@ -129,7 +103,7 @@ if [ "$SELECT_THEME" -eq 1 ]; then
   php artisan migrate
   yarn build:production
   php artisan view:clear
-  sudo rm /root/C2.zip
+  sudo rm /root/billing.zip
   sudo rm -rf /root/pterodactyl
 
   echo -e "                                                       "
@@ -148,7 +122,7 @@ elif [ "$SELECT_THEME" -eq 2 ]; then
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
-  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
   sudo apt install -y nodejs
   npm i -g yarn
   cd /var/www/pterodactyl
@@ -157,7 +131,7 @@ elif [ "$SELECT_THEME" -eq 2 ]; then
   php artisan migrate
   yarn build:production
   php artisan view:clear
-  sudo rm /root/C1.zip
+  sudo rm /root/setllar.zip
   sudo rm -rf /root/pterodactyl
 
   echo -e "                                                       "
@@ -191,7 +165,7 @@ elif [ "$SELECT_THEME" -eq 3 ]; then
     
 
   sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
-  curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
   sudo apt install -y nodejs
   sudo npm i -g yarn
   cd /var/www/pterodactyl
@@ -199,7 +173,7 @@ elif [ "$SELECT_THEME" -eq 3 ]; then
   php artisan migrate
   yarn build:production
   php artisan view:clear
-  sudo rm /root/C3.zip
+  sudo rm /root/enigma.zip
   sudo rm -rf /root/pterodactyl
 
   echo -e "                                                       "
@@ -241,16 +215,16 @@ echo -e "${BLUE}[+] =============================================== [+]${NC}"
 echo -e "                                                                   "
 
 # Unduh file tema
-wget -O /root/C2.zip https://github.com/gitfdil1248/theme/raw/main/C2.zip
+wget -O /root/billing.zip https://github.com/X-Tio/theme/raw/main/billing.zip
 
 # Ekstrak file tema
-unzip /root/C2.zip -d /root/pterodactyl
+unzip /root/billing.zip -d /root/pterodactyl
 
 # Salin tema ke direktori Pterodactyl
 sudo cp -rfT /root/pterodactyl /var/www/pterodactyl
 
 # Instal Node.js dan Yarn
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt install -y nodejs
 sudo npm i -g yarn
 
@@ -262,7 +236,7 @@ yarn build:production
 php artisan view:clear
 
 # Hapus file dan direktori sementara
-sudo rm /root/C2.zip
+sudo rm /root/billing.zip
 sudo rm -rf /root/pterodactyl
 
 echo -e "                                                       "
@@ -413,7 +387,6 @@ EOF
 # Main script
 display_welcome
 install_jq
-check_token
 
 while true; do
   clear
