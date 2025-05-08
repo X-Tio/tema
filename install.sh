@@ -62,7 +62,7 @@ install_theme() {
     read -r SELECT_THEME
     case "$SELECT_THEME" in
       1)
-        THEME_URL=$(echo -e "https://github.com/X-Tio/theme/raw/main/setllar.zip")
+        THEME_URL=$(echo -e "https://github.com/X-Tio/tema/raw/main/setllar.zip")
         break
         ;;
       2)
@@ -70,7 +70,7 @@ install_theme() {
         break
         ;;
       3)
-        THEME_URL=$(echo -e "https://github.com/X-Tio/theme/raw/main/billing.zip")
+        THEME_URL=$(echo -e "https://github.com/X-Tio/tema/raw/main/billing.zip")
         break
         ;; 
       x)
@@ -196,7 +196,7 @@ uninstall_theme() {
   echo -e "${BLUE}[+]                    DELETE THEME                 [+]${NC}"
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
-  bash <(curl https://raw.githubusercontent.com/VallzHost/installer-theme/main/repair.sh)
+  bash <(curl https://raw.githubusercontent.com/VallzHost/installer-tema/main/repair.sh)
   echo -e "                                                       "
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "${GREEN}[+]                 DELETE THEME SUKSES             [+]${NC}"
@@ -215,7 +215,7 @@ echo -e "${BLUE}[+] =============================================== [+]${NC}"
 echo -e "                                                                   "
 
 # Unduh file tema
-wget -O /root/billing.zip https://github.com/X-Tio/theme/raw/main/billing.zip
+wget -O /root/billing.zip https://github.com/X-Tio/tema/raw/main/billing.zip
 
 # Ekstrak file tema
 unzip /root/billing.zip -d /root/pterodactyl
