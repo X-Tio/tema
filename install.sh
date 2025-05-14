@@ -188,8 +188,7 @@ else
 fi
 }
 
-
-# Uninstall theme
+# Uninstall themes
 uninstall_theme() {
   echo -e "                                                       "
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
