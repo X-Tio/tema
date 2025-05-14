@@ -62,15 +62,15 @@ install_theme() {
     read -r SELECT_THEME
     case "$SELECT_THEME" in
       1)
-        THEME_URL=$(echo -e "https://github.com/X-Tio/tema/raw/main/setllar.zip")
+        THEME_URL=$(echo -e "https://github.com/X-Tio/tema/raw/main/stellar.zip")
         break
         ;;
       2)
-        THEME_URL=$(echo -e "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x67\x69\x74\x68\x75\x62\x2E\x63\x6F\x6D\x2F\x44\x49\x54\x5A\x5A\x31\x31\x32\x2F\x66\x6F\x78\x78\x68\x6F\x73\x74\x74\x2F\x72\x61\x77\x2F\x6D\x61\x69\x6E\x2F\x43\x31\x2E\x7A\x69\x70")
+        THEME_URL=$(echo -e "https://github.com/X-Tio/tema/raw/main/billing.zip")
         break
         ;;
       3)
-        THEME_URL=$(echo -e "https://github.com/X-Tio/tema/raw/main/billing.zip")
+        THEME_URL=$(echo -e "https://github.com/X-Tio/tema/raw/main/enigma.zip")
         break
         ;; 
       x)
@@ -103,7 +103,7 @@ if [ "$SELECT_THEME" -eq 1 ]; then
   php artisan migrate
   yarn build:production
   php artisan view:clear
-  sudo rm /root/billing.zip
+  sudo rm /root/stellar.zip
   sudo rm -rf /root/pterodactyl
 
   echo -e "                                                       "
@@ -131,7 +131,7 @@ elif [ "$SELECT_THEME" -eq 2 ]; then
   php artisan migrate
   yarn build:production
   php artisan view:clear
-  sudo rm /root/setllar.zip
+  sudo rm /root/.zip
   sudo rm -rf /root/pterodactyl
 
   echo -e "                                                       "
@@ -215,7 +215,7 @@ echo -e "${BLUE}[+] =============================================== [+]${NC}"
 echo -e "                                                                   "
 
 # Unduh file tema
-wget -O /root/billing.zip https://github.com/X-Tio/tema/raw/main/billing.zip
+wget -O /root/billing.zip https://github.com/X-Tio/tema/raw/main/stellar.zip
 
 # Ekstrak file tema
 unzip /root/billing.zip -d /root/pterodactyl
@@ -236,7 +236,7 @@ yarn build:production
 php artisan view:clear
 
 # Hapus file dan direktori sementara
-sudo rm /root/billing.zip
+sudo rm /root/stellar.zip
 sudo rm -rf /root/pterodactyl
 
 echo -e "                                                       "
