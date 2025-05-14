@@ -131,7 +131,7 @@ elif [ "$SELECT_THEME" -eq 2 ]; then
   php artisan migrate
   yarn build:production
   php artisan view:clear
-  sudo rm /root/.zip
+  sudo rm /root/billing.zip
   sudo rm -rf /root/pterodactyl
 
   echo -e "                                                       "
